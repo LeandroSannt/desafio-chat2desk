@@ -70,7 +70,7 @@ class BaseModel{
 
       return {
         data:data[0],
-        status:400
+        status:200
       }
     }catch(err:any){
       return {status:err.statusCode || 500,data:err.message}
