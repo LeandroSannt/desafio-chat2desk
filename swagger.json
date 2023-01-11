@@ -1,0 +1,246 @@
+{
+  "apis": [
+    "index.js"
+  ],
+  "info": {
+    "title": "Swagger API",
+    "version": "1.0.0",
+    "description": "This is the API documentation and is using the OpenAPI spec."
+  },
+  "basePath": "/",
+  "swagger": "2.0",
+  "paths": {
+    " /users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "description": "Returns all users",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "An array of users",
+            "schema": {
+              "$ref": "#/definitions/users"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "description": "Creates a new user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "description": "name user",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "email",
+            "description": "email user",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "password",
+            "description": "password user",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "login",
+            "description": "login user",
+            "in": "body",
+            "required": true
+          }
+        ],
+        
+        "responses": {
+          "500": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "this user already exist"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users":{
+      "put": {
+        "tags": [
+          "users/id"
+        ],
+        "description": "Update user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "description": "name user",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "email",
+            "description": "email user",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "password",
+            "description": "password user",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "login",
+            "description": "login user",
+            "in": "body",
+            "required": true
+          }
+        ],
+        
+        "responses": {
+          "500": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "this user not found"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "users/id"
+        ],
+        "description": "Get user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "user id",
+            "in": "query",
+            "required": true
+          }
+        ],
+        
+        "responses": {
+          "500": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "this user not found"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "users/id"
+        ],
+        "description": "Get user",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "user id",
+            "in": "query",
+            "required": true
+          }
+        ],
+        
+        "responses": {
+          "500": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "this user not found"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/session/login":{
+      "post": {
+        "tags": [
+          "session/login"
+        ],
+        "description": "login",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          
+          {
+            "name": "email",
+            "description": "email user",
+            "in": "body",
+            "required": true
+          },
+          {
+            "name": "password",
+            "description": "password user",
+            "in": "body",
+            "required": true
+          }
+        ],
+        
+        "responses": {
+          "403": {
+            "description": "Email ou senha invalidos"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+      
+      
+    }
+  },
+  "definitions": {
+    "users": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "login": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {},
+  "tags": []
+}
